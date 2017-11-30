@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MVCTraining.Models.Customer>
+
+@{    
+    ViewBag.Title = "PDF Title";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfileImage)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfileImage)
+            </td>            
+        </tr>
+}
+    </tbody>
+</table>
+
+
+@Html.ActionLink("Print", "Print", "Customer") |||
+
+@Html.ActionLink("Print View", "PrintView", "Customer")
